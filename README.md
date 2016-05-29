@@ -1,5 +1,7 @@
 # GeocoderSimple
 
+[![Build Status](https://travis-ci.org/yuzoiwasaki/geocoder_simple.svg)](https://travis-ci.org/yuzoiwasaki/geocoder_simple)
+
 GeocoderSimple is a yet another simple geocode getter. Once you create geocoder_simple instance, you can get various latitude/longitude only if you set new address.
 
 ## Installation
