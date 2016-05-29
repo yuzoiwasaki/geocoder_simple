@@ -1,5 +1,5 @@
 require "geocoder_simple/version"
-require 'net_http'
+require 'net/http'
 require 'uri'
 require 'json'
 
@@ -20,7 +20,7 @@ class GeocoderSimple
 
   def address=(address)
     @address = address
-    get_lng_and_lat
+    get_lng_and_lat(@address)
   end
 
   def get_lng_and_lat(address)
@@ -28,8 +28,8 @@ class GeocoderSimple
       url = URI.parse(URI.escape("http://maps.google.com/maps/api/geocode/json?&address=\"#{address}\"&sensor=false"))
       json = Net::HTTP.get(url)
       data = JSON.parse(json)
-      @lng = data['result'][0]['geometry']['location']['lng']
-      @lat = data['result'][0]['geometry']['location']['lat']
+      @lng = data['results'][0]['geometry']['location']['lng']
+      @lat = data['results'][0]['geometry']['location']['lat']
     end
   end
 end
