@@ -1,8 +1,6 @@
 # GeocoderSimple
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/geocoder_simple`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+GeocoderSimple is a yet another simple geocode getter. Once you create geocoder_simple instance, you can get various latitude/longitude only if you set new address.
 
 ## Installation
 
@@ -22,7 +20,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+geocoder = GeocoderSimple.new("東京都墨田区押上１丁目１−２")
+geocoder.address # => "東京都墨田区押上１丁目１−２"
+geocoder.lng # => 139.8107155
+geocoder.lat # => 35.7100327
+geocoder.address = "東京都港区芝公園４丁目２−８"
+geocoder.address # => "東京都港区芝公園４丁目２−８"
+geocoder.lng # => 139.7454636
+geocoder.lat # => 35.6585817
+```
 
 ## Development
 
@@ -32,7 +39,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/geocoder_simple. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/yuzoiwasaki/geocoder_simple. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License
